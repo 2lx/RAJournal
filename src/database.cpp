@@ -49,7 +49,7 @@ QString RADB::loginQuery()
  * Symptom
  **********************************************************************************************/
 QString RADB::Symptom::sqlSelectAll = "SELECT syID, syText, syUnitID FROM symptom sy ORDER BY syText";
-QString RADB::Symptom::strZeroString = QString::fromLocal8Bit( "Проблема не описана" );
+QString RADB::Symptom::strZeroString = QString::fromLocal8Bit( "РџСЂРѕР±Р»РµРјР° РЅРµ РѕРїРёСЃР°РЅР°" );
 int RADB::Symptom::p_needDelete = -1;
 QSqlQueryModel RADB::Symptom::m_model;
 
@@ -141,7 +141,7 @@ void RADB::Symptom::deleteOne( int symptomID )
  * Solution
  **********************************************************************************************/
 QString RADB::Solution::sqlSelectAllBySymptom = "SELECT so.soID, so.soText, so.soSensorID FROM solution so WHERE so.soSymptomID = %1";
-QString RADB::Solution::strZeroString = QString::fromLocal8Bit( "В процессе ремонта" );
+QString RADB::Solution::strZeroString = QString::fromLocal8Bit( "Р’ РїСЂРѕС†РµСЃСЃРµ СЂРµРјРѕРЅС‚Р°" );
 int RADB::Solution::p_needDelete = -1;
 
 int RADB::Solution::insertUnique( const QString & text, int syID, int seID  )

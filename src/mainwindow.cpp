@@ -50,7 +50,7 @@ MainWindow::MainWindow( QWidget * parent ) :
 	m_dock->hide();
 	m_dock->resize( 400, 400 );
 	m_dock->setWidget( m_plot );
-	m_dock->setWindowTitle( "Ãðàôè÷åñêîå ïðåäñòàâëåíèå" );
+	m_dock->setWindowTitle( "Ð“Ñ€Ð°Ñ„Ð¸Ñ‡ÐµÑÐºÐ¾Ðµ Ð¿Ñ€ÐµÐ´ÑÑ‚Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ" );
 
     setWindowIcon( QIcon( ":/raicon.png" ) );
 	ui.actDelete->setEnabled( false );
@@ -141,7 +141,7 @@ void MainWindow::setEditHide()
 
 void MainWindow::udpSignalReceived()
 {
-	statusBar()->showMessage( "Ïîëó÷åí ñèãíàë ñ ñåðâåðà", 1000 );
+	statusBar()->showMessage( "ÐŸÐ¾Ð»ÑƒÑ‡ÐµÐ½ ÑÐ¸Ð³Ð½Ð°Ð» Ñ ÑÐµÑ€Ð²ÐµÑ€Ð°", 1000 );
 }
 
 void MainWindow::changeUser()
@@ -159,7 +159,7 @@ void MainWindow::changeUser()
 void MainWindow::setUserId( int newId, const QString & strName, bool isAdmin )
 {
 	m_curUserId = newId;
-	setWindowTitle( "Æóðíàë ÎÏÀ v1.05. " + QString( isAdmin ? "Àäìèíèñòðàòîð" : "Ïîëüçîâàòåëü" ) + ": " + strName);
+	setWindowTitle( "Ð–ÑƒÑ€Ð½Ð°Ð» ÐžÐŸÐ v1.05. " + QString( isAdmin ? "ÐÐ´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ‚Ð¾Ñ€" : "ÐŸÐ¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÑŒ" ) + ": " + strName);
 	ui.actPassword->setEnabled( isAdmin );
 	ui.actNotification->setEnabled( isAdmin );
 	m_isAdmin = isAdmin;
@@ -220,7 +220,7 @@ void MainWindow::refreshMainView()
 
 	RADB::Journal::refresh( dtAfter );
 
-	statusBar()->showMessage( "Ôèëüòð: çàïèñè ñ " + dtAfter.toString( "yyyy-MM-dd" ), 5000 );
+	statusBar()->showMessage( "Ð¤Ð¸Ð»ÑŒÑ‚Ñ€: Ð·Ð°Ð¿Ð¸ÑÐ¸ Ñ " + dtAfter.toString( "yyyy-MM-dd" ), 5000 );
 
 	setupRowHighlight();
 
@@ -450,7 +450,7 @@ void MainWindow::addRecord()
 void MainWindow::deleteRecord()
 {
 	if ( !ui.tvJournal->selectionModel()->selection().count() ) return;
-	if ( QMessageBox::question( this, "Âíèìàíèå", "Óäàëèòü âûäåëåííóþ çàïèñü?",
+	if ( QMessageBox::question( this, "Ð’Ð½Ð¸Ð¼Ð°Ð½Ð¸Ðµ", "Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ Ð²Ñ‹Ð´ÐµÐ»ÐµÐ½Ð½ÑƒÑŽ Ð·Ð°Ð¿Ð¸ÑÑŒ?",
 			QMessageBox::Yes | QMessageBox::No ) == QMessageBox::Yes )
 	{
 		QModelIndex indTemp = m_modelSFJournal->index( ui.tvJournal->currentIndex().row(), JournalModel::clSymptomID );
@@ -559,7 +559,7 @@ void MainWindow::editNotification()
 void MainWindow::drawGraph()
 {
 	m_plot->clearPlot();
-//	p_dock->setWindowTitle( "Ãèñòîãðàììà: " + p_modelJournal->data( p_modelJournal->index( iR, 1 ) ).toString() );
+//	p_dock->setWindowTitle( "Ð“Ð¸ÑÑ‚Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ð°: " + p_modelJournal->data( p_modelJournal->index( iR, 1 ) ).toString() );
 	m_dock->show();
 }
 

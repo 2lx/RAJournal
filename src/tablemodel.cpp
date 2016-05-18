@@ -58,40 +58,40 @@ bool TableModel< RASpecialist >::refresh()
 template<>
 int TableModel< RADepartment >::insertRecord()
 {
-	return intQuery( "INSERT INTO department (dpNumber, dpName) VALUES( 0, 'Новый цех' ) RETURNING dpID" );
+	return intQuery( "INSERT INTO department (dpNumber, dpName) VALUES( 0, 'РќРѕРІС‹Р№ С†РµС…' ) RETURNING dpID" );
 }
 
 template<>
 int TableModel< RAMachineModel >::insertRecord()
 {
-	return intQuery( "INSERT INTO machinemodel (mmName) VALUES( 'Новая модель' ) RETURNING mmID" );
+	return intQuery( "INSERT INTO machinemodel (mmName) VALUES( 'РќРѕРІР°СЏ РјРѕРґРµР»СЊ' ) RETURNING mmID" );
 }
 
 template<>
 int TableModel< RAMachine >::insertRecord( int idParent )
 {
 	return intQuery( QString( "INSERT INTO machine (maDepartmentID, maFullName, maShortName, maImportance) "
-			" VALUES( %1, 'Новый станок', 'Новый станок', 5 ) RETURNING maID" ).arg( idParent ) );
+			" VALUES( %1, 'РќРѕРІС‹Р№ СЃС‚Р°РЅРѕРє', 'РќРѕРІС‹Р№ СЃС‚Р°РЅРѕРє', 5 ) RETURNING maID" ).arg( idParent ) );
 }
 
 template<>
 int TableModel< RAUnit >::insertRecord( int idParent )
 {
 	return intQuery( QString( "INSERT INTO unit (unModelID, unFullName, unShortName) "
-			" VALUES( %1, 'Новый узел', 'Новый узел' ) RETURNING unID" ).arg( idParent ) );
+			" VALUES( %1, 'РќРѕРІС‹Р№ СѓР·РµР»', 'РќРѕРІС‹Р№ СѓР·РµР»' ) RETURNING unID" ).arg( idParent ) );
 }
 
 template<>
 int TableModel< RASensor >::insertRecord( int idParent )
 {
 	return intQuery( QString( "INSERT INTO sensor (seUnitID, seFullName, seShortName, seType, seProgramName, seSchemeName) "
-			" VALUES( %1, 'Новая деталь', 'Новая деталь', 1, '', '' ) RETURNING seID" ).arg( idParent ) );
+			" VALUES( %1, 'РќРѕРІР°СЏ РґРµС‚Р°Р»СЊ', 'РќРѕРІР°СЏ РґРµС‚Р°Р»СЊ', 1, '', '' ) RETURNING seID" ).arg( idParent ) );
 }
 
 template<>
 int TableModel< RADetailModel >::insertRecord()
 {
-	return intQuery( "INSERT INTO detailModel (dmName, dmType) VALUES( 'Новая марка', 0 ) RETURNING dmID" );
+	return intQuery( "INSERT INTO detailModel (dmName, dmType) VALUES( 'РќРѕРІР°СЏ РјР°СЂРєР°', 0 ) RETURNING dmID" );
 }
 
 

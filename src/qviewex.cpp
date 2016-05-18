@@ -2,7 +2,7 @@
  * QViewEx.cpp
  *
  *  Created on: 04.10.2011
- *      Author: MinchaAV
+ *      Author: Aim
  */
 
 #include "qviewex.h"

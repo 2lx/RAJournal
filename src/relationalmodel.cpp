@@ -25,10 +25,10 @@ RelationalModel< RANotification >::RelationalModel( QObject * parent, QSqlDataba
 	setRelation( noMachineID, QSqlRelation( "machine", "maID", "maShortName" ) );
 
 	setHeaderData( noID, Qt::Horizontal, QString::fromLocal8Bit( "ID" ) );
-	setHeaderData( noSensors, Qt::Horizontal, QString::fromLocal8Bit( "Сигналы" ) );
-	setHeaderData( noSms, Qt::Horizontal, QString::fromLocal8Bit( "СМС" ) );
-	setHeaderData( noMachineID, Qt::Horizontal, QString::fromLocal8Bit( "Станок" ) );
-	setHeaderData( noProfessionID, Qt::Horizontal, QString::fromLocal8Bit( "Профессия" ) );
+	setHeaderData( noSensors, Qt::Horizontal, QString::fromLocal8Bit( "РЎРёРіРЅР°Р»С‹" ) );
+	setHeaderData( noSms, Qt::Horizontal, QString::fromLocal8Bit( "РЎРњРЎ" ) );
+	setHeaderData( noMachineID, Qt::Horizontal, QString::fromLocal8Bit( "РЎС‚Р°РЅРѕРє" ) );
+	setHeaderData( noProfessionID, Qt::Horizontal, QString::fromLocal8Bit( "РџСЂРѕС„РµСЃСЃРёСЏ" ) );
 
 	setSort( noID, Qt::AscendingOrder );
 }
@@ -46,8 +46,8 @@ RelationalModel< RAProfession >::RelationalModel( QObject * parent, QSqlDatabase
 	setEditStrategy( QSqlTableModel::OnManualSubmit );
 
 	setHeaderData( prID, Qt::Horizontal, QString::fromLocal8Bit( "ID" ) );
-	setHeaderData( prName, Qt::Horizontal, QString::fromLocal8Bit( "Профессия" ) );
-	setHeaderData( prPhone, Qt::Horizontal, QString::fromLocal8Bit( "Телефон" ) );
+	setHeaderData( prName, Qt::Horizontal, QString::fromLocal8Bit( "РџСЂРѕС„РµСЃСЃРёСЏ" ) );
+	setHeaderData( prPhone, Qt::Horizontal, QString::fromLocal8Bit( "РўРµР»РµС„РѕРЅ" ) );
 
 	setSort( prID, Qt::AscendingOrder );
 }
@@ -66,9 +66,9 @@ RelationalModel< RASpecialist >::RelationalModel( QObject * parent, QSqlDatabase
 	setRelation( spProfessionID, QSqlRelation( "profession", "prID", "prName" ) );
 
 	setHeaderData( spID, Qt::Horizontal, QString::fromLocal8Bit( "ID" ) );
-	setHeaderData( spFIO, Qt::Horizontal, QString::fromLocal8Bit( "ФИО" ) );
-	setHeaderData( spPassword, Qt::Horizontal, QString::fromLocal8Bit( "Пароль" ) );
-	setHeaderData( spProfessionID, Qt::Horizontal, QString::fromLocal8Bit( "Профессия" ) );
+	setHeaderData( spFIO, Qt::Horizontal, QString::fromLocal8Bit( "Р¤РРћ" ) );
+	setHeaderData( spPassword, Qt::Horizontal, QString::fromLocal8Bit( "РџР°СЂРѕР»СЊ" ) );
+	setHeaderData( spProfessionID, Qt::Horizontal, QString::fromLocal8Bit( "РџСЂРѕС„РµСЃСЃРёСЏ" ) );
 
 	setSort( spFIO, Qt::AscendingOrder );
 }
@@ -124,8 +124,8 @@ RelationalModel< RADepartment >::RelationalModel( QObject * parent, QSqlDatabase
 	setEditStrategy( QSqlTableModel::OnManualSubmit );
 
 	setHeaderData( dpID, Qt::Horizontal, QString::fromLocal8Bit( "ID" ) );
-	setHeaderData( dpShortName, Qt::Horizontal, QString::fromLocal8Bit( "Короткое название" ) );
-	setHeaderData( dpFullName, Qt::Horizontal, QString::fromLocal8Bit( "Полное название" ) );
+	setHeaderData( dpShortName, Qt::Horizontal, QString::fromLocal8Bit( "РљРѕСЂРѕС‚РєРѕРµ РЅР°Р·РІР°РЅРёРµ" ) );
+	setHeaderData( dpFullName, Qt::Horizontal, QString::fromLocal8Bit( "РџРѕР»РЅРѕРµ РЅР°Р·РІР°РЅРёРµ" ) );
 
 	setSort( dpID, Qt::AscendingOrder );
 }
@@ -143,7 +143,7 @@ RelationalModel< RAMachineModel >::RelationalModel( QObject * parent, QSqlDataba
 	setEditStrategy( QSqlTableModel::OnManualSubmit );
 
 	setHeaderData( mmID, Qt::Horizontal, QString::fromLocal8Bit( "ID" ) );
-	setHeaderData( mmName, Qt::Horizontal, QString::fromLocal8Bit( "Название" ) );
+	setHeaderData( mmName, Qt::Horizontal, QString::fromLocal8Bit( "РќР°Р·РІР°РЅРёРµ" ) );
 
 	setSort( mmID, Qt::AscendingOrder );
 }
@@ -163,11 +163,11 @@ RelationalModel< RAMachine >::RelationalModel( QObject * parent, QSqlDatabase db
 	setRelation( maDepartmentID, QSqlRelation( "department", "dpID", "dpShortName" ) );
 
 	setHeaderData( maID, Qt::Horizontal, QString::fromLocal8Bit( "ID" ) );
-	setHeaderData( maShortName, Qt::Horizontal, QString::fromLocal8Bit( "Короткое название" ) );
-	setHeaderData( maFullName, Qt::Horizontal, QString::fromLocal8Bit( "Полное название" ) );
-	setHeaderData( maImportance, Qt::Horizontal, QString::fromLocal8Bit( "Важность" ) );
-	setHeaderData( maDepartmentID, Qt::Horizontal, QString::fromLocal8Bit( "Цех" ) );
-	setHeaderData( maModelID, Qt::Horizontal, QString::fromLocal8Bit( "Модель станка" ) );
+	setHeaderData( maShortName, Qt::Horizontal, QString::fromLocal8Bit( "РљРѕСЂРѕС‚РєРѕРµ РЅР°Р·РІР°РЅРёРµ" ) );
+	setHeaderData( maFullName, Qt::Horizontal, QString::fromLocal8Bit( "РџРѕР»РЅРѕРµ РЅР°Р·РІР°РЅРёРµ" ) );
+	setHeaderData( maImportance, Qt::Horizontal, QString::fromLocal8Bit( "Р’Р°Р¶РЅРѕСЃС‚СЊ" ) );
+	setHeaderData( maDepartmentID, Qt::Horizontal, QString::fromLocal8Bit( "Р¦РµС…" ) );
+	setHeaderData( maModelID, Qt::Horizontal, QString::fromLocal8Bit( "РњРѕРґРµР»СЊ СЃС‚Р°РЅРєР°" ) );
 
 	setSort( maID, Qt::AscendingOrder );
 }
@@ -186,9 +186,9 @@ RelationalModel< RAUnit >::RelationalModel( QObject * parent, QSqlDatabase db )
 	setRelation( unModelID, QSqlRelation( "machinemodel", "mmID", "mmName" ) );
 
 	setHeaderData( unID, Qt::Horizontal, QString::fromLocal8Bit( "ID" ) );
-	setHeaderData( unShortName, Qt::Horizontal, QString::fromLocal8Bit( "Короткое название" ) );
-	setHeaderData( unFullName, Qt::Horizontal, QString::fromLocal8Bit( "Полное название" ) );
-	setHeaderData( unModelID, Qt::Horizontal, QString::fromLocal8Bit( "Модель станка" ) );
+	setHeaderData( unShortName, Qt::Horizontal, QString::fromLocal8Bit( "РљРѕСЂРѕС‚РєРѕРµ РЅР°Р·РІР°РЅРёРµ" ) );
+	setHeaderData( unFullName, Qt::Horizontal, QString::fromLocal8Bit( "РџРѕР»РЅРѕРµ РЅР°Р·РІР°РЅРёРµ" ) );
+	setHeaderData( unModelID, Qt::Horizontal, QString::fromLocal8Bit( "РњРѕРґРµР»СЊ СЃС‚Р°РЅРєР°" ) );
 
 	setSort( unID, Qt::AscendingOrder );
 }
@@ -208,12 +208,12 @@ RelationalModel< RASensor >::RelationalModel( QObject * parent, QSqlDatabase db 
 	setRelation( seUnitID, QSqlRelation( "unit", "unID", "unShortName" ) );
 
 	setHeaderData( seID, Qt::Horizontal, QString::fromLocal8Bit( "ID" ) );
-	setHeaderData( seShortName, Qt::Horizontal, QString::fromLocal8Bit( "Короткое название" ) );
-	setHeaderData( seFullName, Qt::Horizontal, QString::fromLocal8Bit( "Полное название" ) );
-	setHeaderData( seUnitID, Qt::Horizontal, QString::fromLocal8Bit( "Узел" ) );
-	setHeaderData( seTypeID, Qt::Horizontal, QString::fromLocal8Bit( "Тип" ) );
-	setHeaderData( seProgramName, Qt::Horizontal, QString::fromLocal8Bit( "Название в программе" ) );
-	setHeaderData( seSchemeName, Qt::Horizontal, QString::fromLocal8Bit( "Название в схеме" ) );
+	setHeaderData( seShortName, Qt::Horizontal, QString::fromLocal8Bit( "РљРѕСЂРѕС‚РєРѕРµ РЅР°Р·РІР°РЅРёРµ" ) );
+	setHeaderData( seFullName, Qt::Horizontal, QString::fromLocal8Bit( "РџРѕР»РЅРѕРµ РЅР°Р·РІР°РЅРёРµ" ) );
+	setHeaderData( seUnitID, Qt::Horizontal, QString::fromLocal8Bit( "РЈР·РµР»" ) );
+	setHeaderData( seTypeID, Qt::Horizontal, QString::fromLocal8Bit( "РўРёРї" ) );
+	setHeaderData( seProgramName, Qt::Horizontal, QString::fromLocal8Bit( "РќР°Р·РІР°РЅРёРµ РІ РїСЂРѕРіСЂР°РјРјРµ" ) );
+	setHeaderData( seSchemeName, Qt::Horizontal, QString::fromLocal8Bit( "РќР°Р·РІР°РЅРёРµ РІ СЃС…РµРјРµ" ) );
 
 	setSort( seID, Qt::AscendingOrder );
 }
@@ -232,8 +232,8 @@ RelationalModel< RADetailModel >::RelationalModel( QObject * parent, QSqlDatabas
 	setRelation( dmTypeID, QSqlRelation( "detailmodeltype", "dtID", "dtName" ) );
 
 	setHeaderData( dmID, Qt::Horizontal, QString::fromLocal8Bit( "ID" ) );
-	setHeaderData( dmName, Qt::Horizontal, QString::fromLocal8Bit( "Название" ) );
-	setHeaderData( dmTypeID, Qt::Horizontal, QString::fromLocal8Bit( "Тип" ) );
+	setHeaderData( dmName, Qt::Horizontal, QString::fromLocal8Bit( "РќР°Р·РІР°РЅРёРµ" ) );
+	setHeaderData( dmTypeID, Qt::Horizontal, QString::fromLocal8Bit( "РўРёРї" ) );
 
 	setSort( dmID, Qt::AscendingOrder );
 }

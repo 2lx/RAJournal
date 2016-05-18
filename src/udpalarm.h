@@ -2,7 +2,7 @@
  * udpalarm.h
  *
  *  Created on: 07.11.2011
- *      Author: MinchaAV
+ *      Author: Aim
  */
 
 #ifndef UDPALARM_H_

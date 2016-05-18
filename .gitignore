@@ -1,0 +1,5 @@
+src/*.user
+tmp/*
+obj/*
+RAJournal
+Makefile*

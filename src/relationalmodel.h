@@ -8,9 +8,7 @@
 #ifndef RELATIONALMODEL_H
 #define RELATIONALMODEL_H
 
-QT_BEGIN_NAMESPACE
 class QSqlRelationalTableModel;
-QT_END_NAMESPACE
 
 template < typename T >
 class RelationalModel : public QSqlRelationalTableModel

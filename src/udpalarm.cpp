@@ -2,7 +2,7 @@
  * udpalarm.cpp
  *
  *  Created on: 07.11.2011
- *      Author: MinchaAV
+ *      Author: Aim
  */
 
 #include "stdafx.h"

@@ -2,7 +2,7 @@
  * QViewEx.h
  *
  *  Created on: 04.10.2011
- *      Author: MinchaAV
+ *      Author: Aim
  */
 
 #ifndef QLISTVIEWEX_H_

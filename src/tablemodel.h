@@ -8,9 +8,7 @@
 #ifndef TABLEMODEL_H
 #define TABLEMODEL_H
 
-QT_BEGIN_NAMESPACE
 class QSqlQueryModel;
-QT_END_NAMESPACE
 
 template < typename T >
 class TableModel : public QSqlQueryModel

@@ -2,7 +2,7 @@
  * QComboBoxKeyboard.h
  *
  *  Created on: 07.11.2011
- *      Author: MinchaAV
+ *      Author: Aim 
  */
 
 #ifndef QCOMBOBOXKEYBOARD_H_

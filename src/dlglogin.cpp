@@ -84,7 +84,7 @@ void DlgLogin::checkPass()
 	}
 	else
 	{
-		QMessageBox::warning( this, "Îøèáêà", "Ââåäèòå âåðíûé ïàðîëü" );
+		QMessageBox::warning( this, "ÐžÑˆÐ¸Ð±ÐºÐ°", "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð²ÐµÑ€Ð½Ñ‹Ð¹ Ð¿Ð°Ñ€Ð¾Ð»ÑŒ" );
 		ui.edPassword->setFocus();
 		ui.edPassword->selectAll();
 	}

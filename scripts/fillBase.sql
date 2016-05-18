@@ -3,9 +3,9 @@
 -- !!!!!
 
 INSERT INTO profession ( prName, prPhone ) VALUES
-	( 'слесарь', '8-909-141-0990' ),
-	( 'электрик', '8-909-141-0990' ),
-	( 'электроник', '8-909-141-0990' );
+	( 'слесарь', '8-999-111-2222' ),
+	( 'электрик', '8-999-444-3333' ),
+	( 'электроник', '8-999-444-5555' );
 
 INSERT INTO specialist (spSurname, spName, spPatronymic, spProfessionID, spPassword) VALUES
 -- default password = "12345"
