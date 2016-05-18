@@ -1,0 +1,953 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>713</width>
+    <height>603</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="dockNestingEnabled">
+   <bool>false</bool>
+  </property>
+  <property name="dockOptions">
+   <set>QMainWindow::AnimatedDocks</set>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="margin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QWidget" name="wgtFilter" native="true">
+      <layout class="QHBoxLayout" name="horizontalLayout_7">
+       <property name="margin">
+        <number>3</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="lblAfterDays">
+         <property name="text">
+          <string>За</string>
+         </property>
+         <property name="buddy">
+          <cstring>cbFilterDays</cstring>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="cbFilterDays">
+         <property name="minimumSize">
+          <size>
+           <width>120</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>120</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="statusTip">
+          <string>Временной отрезок, за который будут показаны записи в журнале после нажатия кнопки &quot;Обновить&quot;</string>
+         </property>
+         <item>
+          <property name="text">
+           <string>1 день</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>3 дня</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>7 дней</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>месяц</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>3 месяца</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>год</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>всё время</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTableViewEx" name="tvJournal">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>9</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="alternatingRowColors">
+       <bool>true</bool>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::SingleSelection</enum>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+      <property name="sortingEnabled">
+       <bool>true</bool>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+      <property name="cornerButtonEnabled">
+       <bool>false</bool>
+      </property>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>80</number>
+      </attribute>
+      <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="horizontalHeaderStretchLastSection">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="verticalHeaderDefaultSectionSize">
+       <number>54</number>
+      </attribute>
+     </widget>
+    </item>
+    <item>
+     <widget class="QToolButton" name="btnEditHide">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="toolTip">
+       <string>Скрыть панель редактирования</string>
+      </property>
+      <property name="statusTip">
+       <string>Скрыть панель редактирования</string>
+      </property>
+      <property name="text">
+       <string>Скрыть</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resources/rajournal.qrc">
+        <normaloff>:/arrow_down.png</normaloff>:/arrow_down.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>8</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frmDetails">
+      <property name="minimumSize">
+       <size>
+        <width>5</width>
+        <height>15</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <property name="horizontalSpacing">
+        <number>3</number>
+       </property>
+       <property name="margin">
+        <number>6</number>
+       </property>
+       <item row="0" column="0" colspan="2">
+        <widget class="QGroupBox" name="gbProblem">
+         <property name="title">
+          <string>Проблема</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout">
+          <property name="horizontalSpacing">
+           <number>3</number>
+          </property>
+          <property name="margin">
+           <number>6</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="lblBeginDT">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Время поломки:</string>
+            </property>
+            <property name="buddy">
+             <cstring>dteError</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QDateTimeEdit" name="dteError">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="displayFormat">
+             <string>dd.MM.yyyy H:mm</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QLabel" name="lblEndDT">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Время наладки:</string>
+            </property>
+            <property name="buddy">
+             <cstring>dteSolve</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="4">
+           <widget class="QDateTimeEdit" name="dteSolve">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="displayFormat">
+             <string>dd.MM.yyyy H:mm</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="5">
+           <widget class="QToolButton" name="btnSetEndTime">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="statusTip">
+             <string>Установить текущее время</string>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="icon">
+             <iconset resource="resources/rajournal.qrc">
+              <normaloff>:/flag.png</normaloff>:/flag.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="7">
+           <widget class="QLabel" name="lblSpecialist">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Специалист:</string>
+            </property>
+            <property name="buddy">
+             <cstring>cbSpecialist</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="8" colspan="2">
+           <widget class="QComboBox" name="cbSpecialist">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="lblDepartment">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Цех:</string>
+            </property>
+            <property name="buddy">
+             <cstring>cbDepartment</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QComboBox" name="cbDepartment">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maxVisibleItems">
+             <number>20</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="QLabel" name="lblMachine">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>50</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Станок:</string>
+            </property>
+            <property name="buddy">
+             <cstring>cbMachine</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="4" colspan="2">
+           <widget class="QComboBox" name="cbMachine">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maxVisibleItems">
+             <number>20</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="7">
+           <widget class="QLabel" name="lblUnit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>30</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Узел:</string>
+            </property>
+            <property name="buddy">
+             <cstring>cbUnit</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="8" colspan="2">
+           <widget class="QComboBox" name="cbUnit">
+            <property name="maxVisibleItems">
+             <number>20</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_3">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Описание:</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+            <property name="buddy">
+             <cstring>cbSymptom</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1" colspan="8">
+           <widget class="QComboBoxKeyboard" name="cbSymptom">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="editable">
+             <bool>true</bool>
+            </property>
+            <property name="maxVisibleItems">
+             <number>20</number>
+            </property>
+            <property name="insertPolicy">
+             <enum>QComboBox::NoInsert</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="9">
+           <widget class="QToolButton" name="btnSymptomReturn">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resources/rajournal.qrc">
+              <normaloff>:/enter.png</normaloff>:/enter.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="6">
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>16</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="2">
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>16</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QTableView" name="tvSolution">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>120</height>
+          </size>
+         </property>
+         <property name="alternatingRowColors">
+          <bool>true</bool>
+         </property>
+         <property name="selectionMode">
+          <enum>QAbstractItemView::SingleSelection</enum>
+         </property>
+         <property name="selectionBehavior">
+          <enum>QAbstractItemView::SelectRows</enum>
+         </property>
+         <property name="sortingEnabled">
+          <bool>true</bool>
+         </property>
+         <attribute name="horizontalHeaderStretchLastSection">
+          <bool>true</bool>
+         </attribute>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QToolButton" name="btnAddSolution">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Добавить</string>
+           </property>
+           <property name="icon">
+            <iconset resource="resources/rajournal.qrc">
+             <normaloff>:/add.png</normaloff>:/add.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="btnDeleteSolution">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Удалить</string>
+           </property>
+           <property name="icon">
+            <iconset resource="resources/rajournal.qrc">
+             <normaloff>:/trash.png</normaloff>:/trash.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>713</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>Файл</string>
+    </property>
+    <addaction name="actUser"/>
+    <addaction name="actExport"/>
+    <addaction name="separator"/>
+    <addaction name="actExit"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Редактирование</string>
+    </property>
+    <addaction name="actAdd"/>
+    <addaction name="actDelete"/>
+    <addaction name="separator"/>
+    <addaction name="actRefresh"/>
+    <addaction name="separator"/>
+    <addaction name="actSettings"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>Вид</string>
+    </property>
+    <addaction name="actPlotter"/>
+    <addaction name="actFilter"/>
+   </widget>
+   <widget class="QMenu" name="menuDB">
+    <property name="title">
+     <string>База</string>
+    </property>
+    <addaction name="actStructure"/>
+    <addaction name="actPassword"/>
+    <addaction name="separator"/>
+    <addaction name="actBroadcast"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuView"/>
+   <addaction name="menuDB"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::LeftToolBarArea|Qt::TopToolBarArea</set>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>24</width>
+     <height>24</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonIconOnly</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actAdd"/>
+   <addaction name="actDelete"/>
+   <addaction name="separator"/>
+   <addaction name="actRefresh"/>
+   <addaction name="separator"/>
+   <addaction name="actStructure"/>
+   <addaction name="actNotification"/>
+   <addaction name="actPassword"/>
+   <addaction name="separator"/>
+   <addaction name="actExport"/>
+   <addaction name="separator"/>
+   <addaction name="actPlotter"/>
+   <addaction name="actFilter"/>
+   <addaction name="separator"/>
+   <addaction name="actSettings"/>
+   <addaction name="actBroadcast"/>
+   <addaction name="separator"/>
+   <addaction name="actUser"/>
+  </widget>
+  <action name="actAdd">
+   <property name="icon">
+    <iconset resource="resources/rajournal.qrc">
+     <normaloff>:/add.png</normaloff>:/add.png</iconset>
+   </property>
+   <property name="text">
+    <string>Добавить</string>
+   </property>
+   <property name="statusTip">
+    <string>Добавить новую запись (Ctrl+I)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="actDelete">
+   <property name="icon">
+    <iconset resource="resources/rajournal.qrc">
+     <normaloff>:/trash.png</normaloff>:/trash.png</iconset>
+   </property>
+   <property name="text">
+    <string>Удалить</string>
+   </property>
+   <property name="statusTip">
+    <string>Удалить выбранную запись (Ctrl+D)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="actPlotter">
+   <property name="icon">
+    <iconset resource="resources/rajournal.qrc">
+     <normaloff>:/chart.png</normaloff>:/chart.png</iconset>
+   </property>
+   <property name="text">
+    <string>График</string>
+   </property>
+   <property name="statusTip">
+    <string>Построить график</string>
+   </property>
+  </action>
+  <action name="actExit">
+   <property name="text">
+    <string>Выход</string>
+   </property>
+   <property name="statusTip">
+    <string>Выход из программы (Alt+F4)</string>
+   </property>
+  </action>
+  <action name="actStructure">
+   <property name="icon">
+    <iconset resource="resources/rajournal.qrc">
+     <normaloff>:/apps.png</normaloff>:/apps.png</iconset>
+   </property>
+   <property name="text">
+    <string>Структура деталей станка</string>
+   </property>
+   <property name="statusTip">
+    <string>Редактировать структуру станка(модель, узлы, датчики)</string>
+   </property>
+  </action>
+  <action name="actFilter">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources/rajournal.qrc">
+     <normaloff>:/search.png</normaloff>:/search.png</iconset>
+   </property>
+   <property name="text">
+    <string>Фильтр</string>
+   </property>
+   <property name="statusTip">
+    <string>Установить фильтр (Ctrl+F)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="actRefresh">
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources/rajournal.qrc">
+     <normaloff>:/refresh.png</normaloff>:/refresh.png</iconset>
+   </property>
+   <property name="text">
+    <string>Обновить (F5)</string>
+   </property>
+   <property name="toolTip">
+    <string>Обновить</string>
+   </property>
+   <property name="statusTip">
+    <string>Обновить выборку из базы (F5)</string>
+   </property>
+   <property name="shortcut">
+    <string>F5</string>
+   </property>
+  </action>
+  <action name="actPassword">
+   <property name="icon">
+    <iconset resource="resources/rajournal.qrc">
+     <normaloff>:/key.png</normaloff>:/key.png</iconset>
+   </property>
+   <property name="text">
+    <string>Пользователи</string>
+   </property>
+   <property name="statusTip">
+    <string>Задать пароли пользователей базы</string>
+   </property>
+  </action>
+  <action name="actExport">
+   <property name="icon">
+    <iconset resource="resources/rajournal.qrc">
+     <normaloff>:/export.png</normaloff>:/export.png</iconset>
+   </property>
+   <property name="text">
+    <string>Сгенерировать отчет</string>
+   </property>
+   <property name="toolTip">
+    <string>Сгенерировать отчет</string>
+   </property>
+   <property name="statusTip">
+    <string>Сгенерировать отчет в формать CSV</string>
+   </property>
+  </action>
+  <action name="actBroadcast">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources/rajournal.qrc">
+     <normaloff>:/map.png</normaloff>:/map.png</iconset>
+   </property>
+   <property name="text">
+    <string>Подключение к серверу</string>
+   </property>
+   <property name="statusTip">
+    <string>Онлайн подключение к серверу сканирования контроллера</string>
+   </property>
+  </action>
+  <action name="actSettings">
+   <property name="icon">
+    <iconset resource="resources/rajournal.qrc">
+     <normaloff>:/config.png</normaloff>:/config.png</iconset>
+   </property>
+   <property name="text">
+    <string>Настройки (F8)</string>
+   </property>
+   <property name="statusTip">
+    <string>Настройки программы</string>
+   </property>
+   <property name="shortcut">
+    <string>F8</string>
+   </property>
+  </action>
+  <action name="actUser">
+   <property name="icon">
+    <iconset resource="resources/rajournal.qrc">
+     <normaloff>:/user.png</normaloff>:/user.png</iconset>
+   </property>
+   <property name="text">
+    <string>Сменить пользователя (F10)</string>
+   </property>
+   <property name="statusTip">
+    <string>Сменить пользователя</string>
+   </property>
+   <property name="shortcut">
+    <string>F10</string>
+   </property>
+  </action>
+  <action name="actNotification">
+   <property name="icon">
+    <iconset resource="resources/rajournal.qrc">
+     <normaloff>:/mail.png</normaloff>:/mail.png</iconset>
+   </property>
+   <property name="text">
+    <string>Настройка уведомлений</string>
+   </property>
+   <property name="statusTip">
+    <string>Настроить реакцию и СМС на сигналы</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QComboBoxKeyboard</class>
+   <extends>QComboBox</extends>
+   <header>qcomboboxkeyboard.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QTableViewEx</class>
+   <extends>QTableView</extends>
+   <header>qviewex.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>cbFilterDays</tabstop>
+  <tabstop>tvJournal</tabstop>
+  <tabstop>btnEditHide</tabstop>
+  <tabstop>dteError</tabstop>
+  <tabstop>dteSolve</tabstop>
+  <tabstop>btnSetEndTime</tabstop>
+  <tabstop>cbSpecialist</tabstop>
+  <tabstop>cbDepartment</tabstop>
+  <tabstop>cbMachine</tabstop>
+  <tabstop>cbUnit</tabstop>
+  <tabstop>cbSymptom</tabstop>
+  <tabstop>btnSymptomReturn</tabstop>
+  <tabstop>tvSolution</tabstop>
+  <tabstop>btnAddSolution</tabstop>
+  <tabstop>btnDeleteSolution</tabstop>
+ </tabstops>
+ <resources>
+  <include location="resources/rajournal.qrc"/>
+ </resources>
+ <connections/>
+ <slots>
+  <slot>curRecordChanged(QModelIndex)</slot>
+ </slots>
+</ui>

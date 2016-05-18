@@ -1,0 +1,24 @@
+<RCC>
+  <qresource prefix="/">
+    <file>enter.png</file>
+    <file>arrow_up.png</file>
+    <file>arrow_down.png</file>
+    <file>mail.png</file>
+    <file>user.png</file>
+    <file>config.png</file>
+    <file>map.png</file>
+    <file>export.png</file>
+    <file>home.png</file>
+    <file>key.png</file>
+    <file>data.png</file>
+    <file>flag.png</file>
+    <file>apps.png</file>
+    <file>save.png</file>
+    <file>refresh.png</file>
+    <file>search.png</file>
+    <file>add.png</file>
+    <file>chart.png</file>
+    <file>trash.png</file>
+    <file>raicon.png</file>
+  </qresource>
+</RCC>
