@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>delete.png</file>
+        <file>chat.png</file>
+        <file>documents.png</file>
+        <file>map.png</file>
+        <file>refresh.png</file>
+        <file>raicon.png</file>
+        <file>raiconclean.png</file>
+    </qresource>
+</RCC>

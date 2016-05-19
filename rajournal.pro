@@ -20,8 +20,9 @@ unix{
 LIBS += -L"/home/aim/Dev/extlibs/lib/qwt6" -lqwt
 }
 INCLUDEPATH += ./ \
-    ./tmp/ \
-    ./src \
-    /home/aim/Dev/extlibs/include/qwt6
+	./tmp/ \
+	./src \
+	./database \
+	/home/aim/Dev/extlibs/include/qwt6
 
 include(rajournal.pri)

@@ -3,3 +3,6 @@ tmp/*
 obj/*
 RAJournal
 Makefile*
+ipconserver/tmp/*
+ipconserver/obj/*
+ipconserver/IPConServer

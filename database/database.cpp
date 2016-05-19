@@ -481,7 +481,7 @@ bool RADB::Journal::updateSymptom( int joNumber, int symptomID, int unitID, int 
 	return !query.lastError().isValid();
 }
 
-/*
+
 
 QString RADB::Notification::sqlSelectAll = "SELECT * FROM v_notification";
 QString RADB::Notification::sqlSelectBySensor = "SELECT * FROM v_notification WHERE noSensors = '%1'";
@@ -495,4 +495,4 @@ void RADB::Notification::updateOne( int noID, const QString & sms, int machineID
 	if ( query.lastError().isValid() )
 		QMessageBox::about( 0, "", query.lastError().databaseText() );
 }
-*/
+

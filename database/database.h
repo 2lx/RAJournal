@@ -30,7 +30,7 @@ public:
 		static QString sqlSelectAll;
 		static QString strZeroString;
 		static bool refresh();
-        static QSqlQueryModel * model() { return &m_model; }
+		static QSqlQueryModel * model() { return &m_model; }
 		static int insertUnique( const QString & text, int unitID );
 		static int updateUnique( int syID, const QString & text, int unitID );
 		static void deleteOne( int symptomID );
@@ -90,13 +90,13 @@ public:
 		static bool updateSymptom( int joNumber, int symptomID, int unitID, int machineID, const QString & symptom );
 	};
 
-//	class Notification
-//	{
-//	public:
-//		static QString sqlSelectAll;
-//		static QString sqlSelectBySensor;
-//		static void updateOne( int noID, const QString & sms, int machineID, int profID );
-//	};
+	class Notification
+	{
+	public:
+		static QString sqlSelectAll;
+		static QString sqlSelectBySensor;
+		static void updateOne( int noID, const QString & sms, int machineID, int profID );
+	};
 };
 
 #endif // DATABASE_H
