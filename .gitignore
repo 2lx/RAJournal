@@ -6,3 +6,4 @@ Makefile*
 ipconserver/tmp/*
 ipconserver/obj/*
 ipconserver/IPConServer
+ipconserver/*user

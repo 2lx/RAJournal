@@ -10,17 +10,17 @@
 
 int main( int argc, char *argv[] )
 {
-	QApplication app( argc, argv );
-	app.addLibraryPath( app.applicationDirPath() + "/plugins" );
+    QApplication app( argc, argv );
+    app.addLibraryPath( app.applicationDirPath() + "/plugins" );
 
-	QTextCodec* codec = QTextCodec::codecForName( "UTF-8" );
-	QTextCodec::setCodecForCStrings( codec );
+    QTextCodec* codec = QTextCodec::codecForName( "UTF-8" );
+    QTextCodec::setCodecForCStrings( codec );
 
-	app.setApplicationName( "IPConServer" );
-	QApplication::setQuitOnLastWindowClosed( false );
+    app.setApplicationName( "IPConServer" );
+    QApplication::setQuitOnLastWindowClosed( false );
 
-	MainWindow w;
-	w.show();
+    MainWindow w;
+    w.show();
 
-	return app.exec();
+    return app.exec();
 }

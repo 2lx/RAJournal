@@ -19,28 +19,28 @@ class ControllerThread;
 
 class MainWindow : public QMainWindow
 {
-	Q_OBJECT
+    Q_OBJECT
 
 public:
-	MainWindow( QWidget *parent = 0 );
-	~MainWindow();
+    MainWindow( QWidget *parent = 0 );
+    ~MainWindow();
 
 private:
-	Ui::MainWindow ui;	
-	QSystemTrayIcon * m_trayIcon;
-	ControllerThread * m_thread;
-	QHttp m_httpIP;
-	QList< QTimer * > m_lstIntervTimers;
-	QList< QTimer * > m_lstLampTimers;
-	QUdpSocket * m_udpSocket;
-	QTimer * m_timerUpd;
-	QDateTime m_lastTriggered;
-	QTimer * m_timerIPReconnect;
-	QTimer * m_timerDBReconnect;
-	QTimer * m_timerCheckIPState;
+    Ui::MainWindow ui;
+    QSystemTrayIcon * m_trayIcon;
+    ControllerThread * m_thread;
+    QHttp m_httpIP;
+    QList< QTimer * > m_lstIntervTimers;
+    QList< QTimer * > m_lstLampTimers;
+    QUdpSocket * m_udpSocket;
+    QTimer * m_timerUpd;
+    QDateTime m_lastTriggered;
+    QTimer * m_timerIPReconnect;
+    QTimer * m_timerDBReconnect;
+    QTimer * m_timerCheckIPState;
 
-	void loadAppSettings();
-	void saveAppSettings();
+    void loadAppSettings();
+    void saveAppSettings();
 
 private slots:
     void iconActivated( QSystemTrayIcon::ActivationReason reason );

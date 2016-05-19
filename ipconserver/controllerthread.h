@@ -43,7 +43,7 @@ signals:
 
 public slots:
     void setInterval( int newInt );
- 
+
 private slots:
     void scanXml( bool error );
 };
